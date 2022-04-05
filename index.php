@@ -8,7 +8,7 @@ $fileContent = file("users.txt");
 echo "<div class='container-table'>";
     echo "<table class='table'>";
 
-    if( !empty($fileContent[1]) ) {
+    if( !empty($fileContent) ) {
         //Loop through each line
         ?>
         <tr>
@@ -48,7 +48,11 @@ echo "<div class='container-table'>";
 
 
         }
-
+        ?>
+        <tr>
+            <td colspan="7"><a class="btn btn-primary ms-auto mt-4 d-block" style="width:120px;" href="adduser.php">Add user</a></td>
+        </tr>
+        <?php
     } else {
         ?>
         <tr>

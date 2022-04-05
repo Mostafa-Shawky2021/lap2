@@ -71,16 +71,18 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             // the action is to edit user
             if( isset($_GET['id']) ) {
                 $userId = $_GET['id'];
+
                 // read users from file
                 $userData = file( 'users.txt' );
+
                 // get specific user with id
                 $data = $userData[$userId];
+
                 // Append end of line in each record to start new line
                 $data = trim($record,':') . "\n";
 
                 // Append user data into array to append users in file
                 $userData[$userId] = $data;
-
                 file_put_contents('users.txt',implode('',$userData));
 
                 header("location:index.php");
@@ -88,7 +90,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             } else {
 
                 // insert new record
-                $userfile =fopen("users.txt", "a");
+                $userfile = fopen("users.txt", "a");
                 fwrite($userfile, trim($record,":").PHP_EOL);
                 fclose($userfile);
                 header("location:index.php");

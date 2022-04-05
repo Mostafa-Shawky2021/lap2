@@ -54,20 +54,21 @@ if( isset($userData[$userId]) ) {
                         <label>PHP</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="skills[]" value="MYSQL" <?= in_array('MYSQL',$skill) ? 'checked': ''  ?>/>
-                        <label>MYSQL</label>
+                        <input type="checkbox" name="skills[]" value="c" <?= in_array('c',$skill) ? 'checked': ''  ?>/>
+                        <label>c</label>
                     </div>
                 </div>
                 <div class="inline-checkbox">
                     <div>
-                        <input type="checkbox" name="skills[]" value="c++" <?= in_array('c++',$skill) ? 'checked': ''  ?>/>
-                        <label>c++</label>
+                        <input type="checkbox" name="skills[]" value="python" <?= in_array('python',$skill) ? 'checked': ''  ?>/>
+                        <label>python</label>
                     </div>
                     <div>
                         <input type="checkbox" name="skills[]" value="mysql" <?= in_array('mysql',$skill) ? 'checked': ''  ?>/>
                         <label>MYSQL</label>
                     </div>
                 </div>
+                <span class="error"><?= isset($error->skills) ? $error->skills : '' ?></span>
             </div>
             <!-- end skills -->
 
